@@ -1,0 +1,14 @@
+<adapter-config name="materiasCursando" adapter="Database Adapter" wsdlLocation="materiasCursando.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/mypool" UIConnectionName="Connection1" adapterRef=""/>
+  <endpoint-interaction portType="materiasCursando_ptt" operation="materiasCursandoSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="materiasCursando.Inscriptos"/>
+      <property name="QueryName" value="materiasCursandoSelect"/>
+      <property name="MappingsMetaDataURL" value="materiasCursando-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>
