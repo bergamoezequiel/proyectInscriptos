@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<InscriptosCollection xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/MateriasIsncripto">
+<InscriptosCollection xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/materiasCursando">
    <Inscriptos>
-      <materia>string1</materia>
-      <alumno>string3</alumno>
+      <materia>string39</materia>
+      <alumno>string41</alumno>
    </Inscriptos>
    <Inscriptos>
-      <materia>string5</materia>
-      <alumno>string7</alumno>
+      <materia>string43</materia>
+      <alumno>string45</alumno>
    </Inscriptos>
    <Inscriptos>
-      <materia>string9</materia>
-      <alumno>string11</alumno>
+      <materia>string47</materia>
+      <alumno>string49</alumno>
    </Inscriptos>
 </InscriptosCollection>

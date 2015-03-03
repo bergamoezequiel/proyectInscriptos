@@ -10,51 +10,24 @@
            xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
            xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy"
            xmlns:ui="http://xmlns.oracle.com/soa/designer/">
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/jugar/Project3/consultarCupoMateria"
-          location="consultarCupoMateria.wsdl" importType="wsdl"/>
-  <import namespace="http://oracle.com/sca/soapservice/jugar/Project3/ConsultarCupoMateriaService"
-          location="ConsultarCupoMateriaService.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/jugar/Project3/MateriasIsncripto"
-          location="MateriasIsncripto.wsdl" importType="wsdl"/>
-  <import namespace="http://oracle.com/sca/soapservice/jugar/Project3/MateriasInscriptoService"
-          location="MateriasInscriptoService.wsdl" importType="wsdl"/>
-  <service name="ConsultarCupoMateriaService"
-           ui:wsdlLocation="ConsultarCupoMateriaService.wsdl">
-    <interface.wsdl interface="http://oracle.com/sca/soapservice/jugar/Project3/ConsultarCupoMateriaService#wsdl.interface(ConsultarCupoMateria_ptt)"/>
-    <binding.ws port="http://oracle.com/sca/soapservice/jugar/Project3/ConsultarCupoMateriaService#wsdl.endpoint(ConsultarCupoMateriaService/ConsultarCupoMateria_pt)">
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/jugar/Project3/materiasCursando"
+          location="materiasCursando.wsdl" importType="wsdl"/>
+  <import namespace="http://oracle.com/sca/soapservice/jugar/Project3/MateriasCursandoService"
+          location="MateriasCursandoService.wsdl" importType="wsdl"/>
+  <service name="MateriasCursandoService"
+           ui:wsdlLocation="MateriasCursandoService.wsdl">
+    <interface.wsdl interface="http://oracle.com/sca/soapservice/jugar/Project3/MateriasCursandoService#wsdl.interface(MateriasCursando_ptt)"/>
+    <binding.ws port="http://oracle.com/sca/soapservice/jugar/Project3/MateriasCursandoService#wsdl.endpoint(MateriasCursandoService/MateriasCursando_pt)">
       <property name="weblogic.wsee.wsat.transaction.flowOption"
                 type="xs:string" many="false">NEVER</property>
     </binding.ws>
   </service>
-  <service name="MateriasInscriptoService"
-           ui:wsdlLocation="MateriasInscriptoService.wsdl">
-    <interface.wsdl interface="http://oracle.com/sca/soapservice/jugar/Project3/MateriasInscriptoService#wsdl.interface(MateriasInscripto_ptt)"/>
-    <binding.ws port="http://oracle.com/sca/soapservice/jugar/Project3/MateriasInscriptoService#wsdl.endpoint(MateriasInscriptoService/MateriasInscripto_pt)">
-      <property name="weblogic.wsee.wsat.transaction.flowOption"
-                type="xs:string" many="false">NEVER</property>
-    </binding.ws>
-  </service>
-  <component name="Mediator1">
-    <implementation.mediator src="Mediator1.mplan"/>
+  <component name="Mediator3">
+    <implementation.mediator src="Mediator3.mplan"/>
   </component>
-  <component name="Mediator2">
-    <implementation.mediator src="Mediator2.mplan"/>
-  </component>
-  <reference name="consultarCupoMateria"
-             ui:wsdlLocation="consultarCupoMateria.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/jugar/Project3/consultarCupoMateria#wsdl.interface(consultarCupoMateria_ptt)"/>
-    <binding.jca config="consultarCupoMateria_db.jca"/>
-    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
-    <property name="jca.retry.interval" type="xs:int" many="false"
-              override="may">1</property>
-    <property name="jca.retry.backoff" type="xs:int" many="false"
-              override="may">2</property>
-    <property name="jca.retry.maxInterval" type="xs:string" many="false"
-              override="may">120</property>
-  </reference>
-  <reference name="MateriasIsncripto" ui:wsdlLocation="MateriasIsncripto.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/jugar/Project3/MateriasIsncripto#wsdl.interface(MateriasIsncripto_ptt)"/>
-    <binding.jca config="MateriasIsncripto_db.jca"/>
+  <reference name="materiasCursando" ui:wsdlLocation="materiasCursando.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/jugar/Project3/materiasCursando#wsdl.interface(materiasCursando_ptt)"/>
+    <binding.jca config="materiasCursando_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false"
               override="may">1</property>
@@ -64,19 +37,11 @@
               override="may">120</property>
   </reference>
   <wire>
-    <source.uri>ConsultarCupoMateriaService</source.uri>
-    <target.uri>Mediator1/Mediator1</target.uri>
+    <source.uri>MateriasCursandoService</source.uri>
+    <target.uri>Mediator3/Mediator3</target.uri>
   </wire>
   <wire>
-    <source.uri>Mediator1/consultarCupoMateria</source.uri>
-    <target.uri>consultarCupoMateria</target.uri>
-  </wire>
-  <wire>
-    <source.uri>MateriasInscriptoService</source.uri>
-    <target.uri>Mediator2/Mediator2</target.uri>
-  </wire>
-  <wire>
-    <source.uri>Mediator2/MateriasIsncripto</source.uri>
-    <target.uri>MateriasIsncripto</target.uri>
+    <source.uri>Mediator3/materiasCursando</source.uri>
+    <target.uri>materiasCursando</target.uri>
   </wire>
 </composite>

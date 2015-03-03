@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <inp2:materias xmlns:inp2="http://www.proyectoInscripcion.org">
-   <inp2:materia>string1</inp2:materia>
-   <inp2:materia>string5</inp2:materia>
-   <inp2:materia>string9</inp2:materia>
+   <inp2:materia>string39</inp2:materia>
+   <inp2:materia>string43</inp2:materia>
+   <inp2:materia>string47</inp2:materia>
 </inp2:materias>
