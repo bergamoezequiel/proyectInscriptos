@@ -26,4 +26,11 @@
         </xsd:sequence>
     </xsd:complexType>
 </xsd:element>
+<xsd:element name="materias">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element name="materia" maxOccurs="unbounded" minOccurs="0" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:element>
 </xsd:schema>

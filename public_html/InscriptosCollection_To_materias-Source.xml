@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InscriptosCollection xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/MateriasIsncripto">
+   <Inscriptos>
+      <materia>string1</materia>
+      <alumno>string3</alumno>
+   </Inscriptos>
+   <Inscriptos>
+      <materia>string5</materia>
+      <alumno>string7</alumno>
+   </Inscriptos>
+   <Inscriptos>
+      <materia>string9</materia>
+      <alumno>string11</alumno>
+   </Inscriptos>
+</InscriptosCollection>
